@@ -1,0 +1,916 @@
+.cs-bw-booking-bookingformContainer
+  .cs-bw-booking-BookingFormWide-Roomscontainer,
+.cs-bw-booking-bookingformContainer .cs-bw-booking-rate-container {
+  z-index: 1;
+}
+
+.cs-bw-booking-logoContainer,
+.cs-bw-booking-myBooking {
+  display: none;
+}
+
+.cs-bw-booking-show {
+  display: block !important;
+}
+
+.cs-bw-booking-rate-field {
+  padding: 8px;
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+.cs-bw-booking-bookingformContainer {
+  max-width: 1130px;
+  margin: 0 auto;
+  z-index: 1;
+  color: #0f172c;
+  font-size: 16px;
+  letter-spacing: 0.9px;
+}
+
+.cs-bw-booking-findHotel > .container {
+  width: auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  letter-spacing: 0.9px;
+  z-index: 1;
+}
+
+.cs-bw-booking-findhoteloptions {
+  position: relative;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 46px;
+}
+.cs-bw-booking-findhoteloptions > * {
+  width: 100%;
+  position: relative;
+  margin: 0 15px;
+}
+
+.cs-bw-booking-findhoteloptions .bw-input {
+  min-width: 250px;
+  width: 100%;
+  background: #ffffff;
+  padding: 14px 15px 14px 50px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+.cs-bw-booking-findhoteloptions > .cs-bw-booking-codes input {
+  padding: 14px 15px;
+}
+
+.cs-bw-booking-findhoteloptions .bw-icon {
+  width: 24px;
+  position: absolute;
+  left: 14px;
+}
+
+.cs-bw-booking-findhoteloptions > * + * {
+  margin-left: 0px;
+}
+
+/*.cs-bw-booking-findhoteloptions > * > * {
+             padding: 0 45px;
+         }*/
+
+.cs-bw-booking-findhoteloptions > * > label {
+  display: none;
+  color: #000;
+  font-size: 60%;
+  text-transform: uppercase;
+  opacity: 0.7;
+  text-align: left;
+}
+
+/*.cs-bw-booking-findhoteloptions > * > * {
+             padding: 0 35px;
+         }*/
+
+.fixedBooking .cs-bw-booking-findhoteloptions > * > label {
+  font-size: 70%;
+}
+
+.cs-bw-booking-BookingFormWide-Findhotelexp {
+  background: #000;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 80%;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.cs-bw-booking-BookingFormWide-Checkreservationexp {
+  font-size: 80%;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.cs-bw-booking-BookingFormWide-Findhotelexp:hover,
+.cs-bw-booking-BookingFormWide-Checkreservationexp:hover {
+  text-decoration: underline;
+}
+
+.cs-bw-booking-BookingFormWide-Checkreservationoptions label {
+  font-weight: 300;
+}
+
+.cs-bw-booking-findhoteloptions > .button {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.cs-bw-booking-rate-codes {
+  padding: 0px;
+  padding-top: 10px;
+  border: none;
+}
+
+.cs-bw-booking-rate-choices-click-area {
+  width: 100%;
+  height: 64px;
+}
+
+/* Calendar */
+.cs-bw-booking-calendar__header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.cs-bw-booking-datepicker {
+  display: none;
+  z-index: 1;
+}
+
+.cs-bw-booking-datepicker .ui-widget {
+  font-family: inherit;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker {
+  padding: 2rem 2rem 1rem 2rem;
+  font-size: 16px;
+  border: none;
+  width: 664px !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker .ui-datepicker-group-first table {
+  padding-right: 17px;
+  width: 100%;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker .ui-datepicker-group-last table {
+  padding-left: 17px;
+  width: 100%;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker .ui-datepicker-calendar {
+  font-size: 16px;
+  margin: 0;
+  border-collapse: separate;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker .ui-datepicker-title {
+  font-weight: 500;
+  cursor: default;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker th {
+  color: #838089;
+  font-size: 14px;
+  padding: 8px 0 12px 0;
+  font-weight: 400;
+  cursor: default;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-prev.ui-state-disabled {
+  display: none;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-prev .ui-icon {
+  border: solid #838089;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  width: 0.5px;
+  height: 0.5px;
+  margin-top: -4px;
+  margin-left: -2px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-next .ui-icon {
+  border: solid #838089;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  width: 0.5px;
+  height: 0.5px;
+  margin-top: -5px;
+  margin-left: -6px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.cs-bw-booking-datepicker .ui-datepicker .ui-datepicker-prev,
+.cs-bw-booking-datepicker .ui-datepicker .ui-datepicker-next {
+  width: 26px !important;
+  height: 23px !important;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-prev.ui-state-hover,
+.cs-bw-booking-datepicker .ui-datepicker-next.ui-state-hover {
+  background: none;
+  border: none;
+  top: 2px;
+  background-color: #f4f4f4;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-prev.ui-state-hover {
+  left: 2px;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-next.ui-state-hover {
+  right: 2px;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker td {
+  text-align: center;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker td span,
+.cs-bw-booking-datepicker .ui-datepicker td a {
+  text-align: center;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker td:hover:not(.ui-state-disabled) {
+  border: 1px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-current {
+  display: none;
+}
+
+.cs-bw-booking-datepicker .cs-bw-booking-datepicker__close {
+  background-color: #fff;
+  padding: 0 2rem 2rem 2rem;
+  display: flex;
+  justify-content: end;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.cs-bw-booking-datepicker .cs-bw-booking-datepicker__close button {
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+  margin: 0;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  font-weight: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cs-bw-booking-datepicker .cs-bw-booking-datepicker__close button:hover {
+  color: #fff;
+  border: none;
+  background-color: rgba(89, 86, 96, 1);
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-header {
+  background: none;
+  border: 0;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-calendar .ui-state-default,
+.cs-bw-booking-datepicker .ui-datepicker-calendar .ui-state-active {
+  border: none;
+  background: none;
+}
+
+.cs-bw-booking-datepicker
+  .ui-datepicker-calendar
+  .cs-bw-booking-datepicker__active-day {
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.cs-bw-booking-datepicker
+  .ui-datepicker-calendar
+  .cs-bw-booking-datepicker__active-day--first {
+  pointer-events: none;
+}
+
+.cs-bw-booking-datepicker
+  .ui-datepicker-calendar
+  .cs-bw-booking-datepicker__active-day
+  .ui-state-default {
+  color: inherit;
+}
+
+.cs-bw-booking-datepicker .ui-datepicker-calendar .ui-datepicker-unselectable {
+  cursor: default;
+}
+
+/* Rooms */
+.cs-bw-booking-rooms__header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.cs-bw-booking-rooms__header span {
+  min-width: 180px;
+}
+
+.cs-bw-booking-rooms__header img {
+  width: 24px;
+}
+
+.cs-bw-booking-rooms-panel {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  min-width: 384px;
+  top: 3rem;
+  left: 0;
+  padding: 8px;
+  background: #fff;
+  max-height: 65vh;
+  border-radius: 8px;
+  gap: 17px;
+  letter-spacing: 0;
+  z-index: 1;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.20);
+}
+
+.cs-bw-booking-rooms-panel label,
+.cs-bw-booking-rooms-panel img,
+.cs-bw-booking-rooms-panel button {
+  cursor: inherit;
+}
+
+.cs-bw-booking-rooms-panel__chambers {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+#chambers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs-bw-booking-rooms-panel__chambers::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.cs-bw-booking-rooms-panel__add-chambre button,
+.cs-bw-booking-chambre__remove-chamber button {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cs-bw-booking-rooms-panel__add-chambre button,
+.cs-bw-booking-chambre__remove-chamber button {
+  background: none;
+  border: none;
+}
+
+.cs-bw-booking-rooms-panel__add-chambre img,
+.cs-bw-booking-chambre__remove-chamber img {
+  width: 20px;
+}
+
+.cs-bw-booking-rooms-panel__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.cs-bw-booking-rooms-panel__footer {
+  padding: 0.5rem;
+}
+
+.cs-bw-booking-rooms-panel__footer span {
+  align-self: center;
+}
+
+.cs-bw-booking-rooms-panel__footer button {
+  background: #000;
+  padding: 11px 24px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.cs-bw-booking-rooms-panel__footer button:hover {
+  background-color: rgba(89, 86, 96, 1);
+}
+
+.cs-bw-booking-chambre {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: #d0ced4;
+  border-bottom-width: 1px;
+  border-style: solid;
+  padding-bottom: 12px;
+}
+
+.cs-bw-booking-chambre h5 {
+  line-height: 24px;
+}
+
+.cs-bw-booking-chambre__adults span {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.cs-bw-booking-chambre__adults,
+.cs-bw-booking-chambre__childs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cs-bw-booking-chambre-childs-age {
+  display: flex;
+  flex-direction: column;
+}
+.cs-bw-booking-chambre-childs-age__age {
+  color: #838294;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.cs-bw-booking-chambre-childs-age-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cs-bw-booking-child-age {
+  width: 160px;
+  border-width: 1px;
+  border-radius: 10px;
+  border-style: solid;
+  height: 3.5rem;
+}
+
+.cs-bw-booking-child-age:focus,
+.cs-bw-booking-child-age:focus-within {
+  border-width: 2px;
+}
+
+.cs-bw-booking-round-input {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.cs-bw-booking-round-input img {
+  width: 32px;
+}
+
+.cs-bw-booking-round-input__decrement,
+.cs-bw-booking-round-input__increment {
+  cursor: pointer;
+}
+
+.cs-bw-booking-round-input__value input {
+  width: 0.75rem;
+  color: inherit;
+  background: none;
+}
+
+.cs-bw-booking-round-input button {
+  border: none;
+  background: none;
+}
+
+.cs-bw-booking-round-input button[disabled] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.cs-bw-booking-select-container {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.cs-bw-booking-select-container__label {
+  position: absolute;
+  transform: translate(0, 1.7rem) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+  font-size: 12px;
+}
+
+.cs-bw-booking-select-container__arrow {
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  transform: translate(0, 1.1rem) rotate(90deg) skew(0) skewY(0) scaleX(1)
+    scaleY(1);
+}
+
+.cs-bw-booking-select-container__arrow img {
+  width: 20px;
+}
+
+.cs-bw-booking-select-container__select {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  position: relative;
+  border: none;
+  transform: translate(0, 0.5rem) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+/* Codes */
+.cs-bw-booking-codes__header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-bw-booking-codes__header input {
+  background: none;
+}
+
+.cs-bw-booking-codes__header img {
+  width: 24px;
+}
+
+.cs-bw-booking-codes__header img[rotate] {
+  transform: translate(0, 0) rotate(180deg) skew(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.cs-bw-booking-codes-panel {
+  display: none;
+  flex-direction: column;
+  min-width: 384px;
+  padding: 2rem;
+  border-radius: 8px;
+  max-height: 65vh;
+  background-color: #fff;
+  gap: 2rem;
+  position: absolute;
+  top: 3rem;
+  letter-spacing: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.cs-bw-booking-codes-panel__code {
+    width: 100%;
+    background: #ffffff;
+    padding: 14px 15px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+
+
+.cs-bw-booking-codes-panel__footer {
+  align-self: flex-end;
+}
+
+.cs-bw-booking-codes-panel__footer button {
+  background: #000;
+  padding: 11px 24px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.cs-bw-booking-codes-panel__footer button:hover {
+  background-color: rgba(89, 86, 96, 1);
+}
+
+/* chambers inside the main rate codes container  */
+.cs-bw-booking-rate-choices-click-area {
+  font-size: 100%;
+  white-space: nowrap;
+}
+
+.cs-bw-booking-rate-choices-click-area label {
+  vertical-align: middle;
+}
+
+/* chambers inside the main roomscontainer class to design the individual room container */
+
+.cs-bw-booking-nbr-chambres {
+  font-size: 100%;
+  padding-top: 3px;
+  white-space: nowrap;
+  padding-left: 46px;
+}
+
+.cs-bw-booking-nbr-chambres label {
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.cs-bw-booking-nbr-chambres select {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0px;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  margin: 0 5px;
+  padding: 0px 8px;
+  border-radius: 4px;
+  pointer-events: visible;
+}
+
+.cs-bw-booking-chambres select::-ms-expand,
+.cs-bw-booking-nbr-chambres select::-ms-expand {
+  display: none;
+}
+
+.cs-bw-booking-rate-container {
+  display: none;
+  background: #f2f2f4;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.cs-bw-booking-rate-container_closebutton {
+  margin-top: 5px;
+  padding: 15px;
+}
+
+/* main pop up div, displayed with all rooms individual details  */
+
+.cs-bw-booking-BookingFormWide-Roomscontainer {
+  display: none;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.cs-bw-booking-chambres {
+  padding: 25px 20px 0 20px;
+}
+
+.cs-bw-booking-chambres + .cs-bw-booking-chambres {
+  border-top: 1px solid #ebebeb;
+  margin-top: 10px;
+}
+
+.cs-bw-booking-chambres h4 {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+.cs-bw-booking-chambres select {
+  background: none;
+  font-size: inherit;
+  width: calc(60% + 20px);
+  padding: 6px;
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.cs-bw-booking-chambres .guest {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 14px;
+}
+
+.cs-bw-booking-chambres .guest .guest-children {
+}
+
+.cs-bw-booking-chambres .guest > div {
+  flex-grow: 1;
+}
+
+.cs-bw-booking-chambres .guest label {
+  color: #9b9b9b;
+  display: block;
+  font-size: 80%;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cs-bw-booking-chambres .children-age {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.cs-bw-booking-chambres .children-age > div {
+  display: inline-block;
+  vertical-align: top;
+  /* width: calc(50% - 7px);*/
+}
+
+.cs-bw-booking-chambres .children-age > div:only-child {
+  width: 100%;
+}
+
+.cs-bw-booking-chambres .children-age > div + div {
+  /* margin-left: 14px;*/
+}
+
+.cs-bw-booking-chambres .children-age label {
+  margin-top: 14px;
+}
+
+.cs-bw-booking-BookingFormWide-Roomscontainer_closebutton {
+  padding: 15px;
+  border-bottom-radius: 7px;
+  margin-top: 10px;
+}
+
+.cs-bw-booking-BookingFormWide-Roomscontainer_closebutton,
+.cs-bw-booking-rate-container_closebutton,
+.cs-bw-booking-findhoteloptions .bookingButton,
+.cs-bw-booking-BookingFormWide-Checkreservationoptions input[type="submit"] {
+  background: #0f172c;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cs-bw-booking-findhoteloptions .bookingButton {
+  background: #001A36;
+  color: #fff;
+  border: 1px solid #001A36;
+  border-radius: 5px;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 120px;
+  text-decoration: none;
+  justify-content: center;
+  text-transform: inherit;
+  font-weight: normal;
+}
+
+.cs-bw-booking-findhoteloptions .bookingButton:hover {
+  background: #fff;
+  color: #001A36;
+}
+
+/* Check reservation */
+
+.cs-bw-booking-myBooking {
+  background: #fff;
+  padding: 0 10px;
+  margin: 0px 2px 0px 0px;
+}
+
+.cs-bw-booking-BookingFormWide-Checkreservationoptions {
+  display: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 30px 20px 20px;
+}
+
+.cs-bw-booking-checkreservation-group {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  margin-right: 20px;
+}
+
+.cs-bw-booking-checkreservation-group label {
+  font-size: 80%;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  left: 10px;
+  top: -5px;
+}
+
+.cs-bw-booking-checkreservation-group input {
+  background: #fafafa;
+  border: 2px solid #f3f3f3;
+  padding: 15px;
+  width: 100%;
+}
+
+.cs-bw-booking-BookingFormWide-Checkreservationoptions input[type="submit"] {
+  padding: 0 30px;
+}
+
+/* Responsive styles */
+
+@media screen and (max-width: 1000px) {
+  .cs-bw-booking-findHotel > .container {
+    border-radius: 0;
+  }
+
+  .cs-bw-booking-findhoteloptions {
+    display: block;
+    height: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cs-bw-booking-findhoteloptions > * {
+    /* padding: 15px; */
+    margin: 0;
+  }
+
+  .cs-bw-booking-calendar {
+    flex-direction: column;
+  }
+
+  .cs-bw-booking-datepicker .ui-datepicker {
+    width: unset !important;
+    padding: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px;
+  }
+
+  .cs-bw-booking-datepicker .ui-datepicker-multi-2 .ui-datepicker-group {
+    width: unset;
+  }
+
+  .cs-bw-booking-findhoteloptions .bookingButton {
+    padding: 20px 60px;
+    max-width: unset;
+  }
+
+  .cs-bw-booking-codes__header {
+    justify-content: left;
+  }
+
+  .cs-bw-booking-datepicker,
+  .cs-bw-booking-rooms-panel,
+  .cs-bw-booking-codes-panel {
+    position: unset !important;
+    min-width: unset;
+    max-height: unset;
+  }
+}
