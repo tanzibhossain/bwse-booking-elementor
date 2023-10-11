@@ -155,14 +155,14 @@ function AddChambre() {
 			'<div class="cs-bw-booking-round-input">' + 
 			'<div class="cs-bw-booking-round-input__decrement">' + 
 			'<button type="button" id="' + n + '-decrement-adults-button" onclick="DecrementAdultsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/minus-circled.svg" /><\/button><\/div>' + 
-			'<div class="cs-bw-booking-round-input__value"><input type="text" id="' + n + '-adults-input-value" name="numAdults[' + t.length + ']"><\/input><\/div>' + 
+			'<div class="cs-bw-booking-round-input__value"><input type="text" id="' + n + '-adults-input-value" name="numAdults[' + t.length + ']" readonly><\/input><\/div>' + 
 			'<div class="cs-bw-booking-round-input__increment"><button type="button" id="' + n + '-increment-adults-button" onclick="IncrementAdultsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/plus-circled.svg" /><\/button><\/div><\/div><\/div>'+
 			'<div class="cs-bw-booking-chambre__childs"><div class="cs-bw-booking-chambre-childs-age">' + 
 			'<span class="cs-bw-booking-chambre-childs-age__child">' + bookingResources.chambreResources.Childrens + '<\/span>' + 
 			'<span class="cs-bw-booking-chambre-childs-age__age">' + bookingResources.chambreResources.ChildrenAge + '<\/span><\/div>' + 
 			'<div class="cs-bw-booking-round-input"><div class="cs-bw-booking-round-input__decrement">' + 
 			'<button type="button" id="' + n + '-decrement-childs-button" onclick="DecrementChildsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/minus-circled.svg" /><\/button><\/div>' + 
-			'<div class="cs-bw-booking-round-input__value"><input type="text" id="' + n + '-childs-input-value" name="numChild[' + t.length + ']"><\/input><\/div>' + 
+			'<div class="cs-bw-booking-round-input__value"><input type="text" id="' + n + '-childs-input-value" name="numChild[' + t.length + ']" readonly><\/input><\/div>' + 
 			'<div class="cs-bw-booking-round-input__increment"><button type="button" id="' + n + '-increment-childs-button" onclick="IncrementChildsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/plus-circled.svg" /><\/button><\/div><\/div><\/div>' + 
 			'<div class="cs-bw-booking-chambre__remove-chamber"><button type="button" onclick="RemoveChambre(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/minus.svg" /><span>' + bookingResources.chambreResources.RemoveRoom + "<\/span><\/button><\/div><\/div>";
 		i.insertAdjacentHTML("beforeend", u);
