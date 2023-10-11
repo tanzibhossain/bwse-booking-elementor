@@ -5,7 +5,7 @@
     border: 1px solid rgba(0, 0, 0, 0.20);
     border-radius: 5px;
     width: 278px;
-    max-width: none;
+    max-width: 725px;
     padding: 0;
     top: 100px;
     left: 20px;
@@ -89,7 +89,7 @@
   
   .daterangepicker .drp-calendar {
     display: none;
-    max-width: 320px;
+    max-width: 360px;
   }
   
   .daterangepicker .drp-calendar.left {
@@ -127,10 +127,10 @@
     white-space: nowrap;
     text-align: center;
     vertical-align: middle;
-    min-width: 40px;
-    width: 40px;
-    height: 40px;
-    line-height: 1.25em;
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    line-height: 1em;
     font-size: 1em;
     border-radius: 4px;
     border: 1px solid transparent;
@@ -334,7 +334,7 @@
   /*  Larger Screen Styling */
   @media (min-width: 564px) {
     .daterangepicker {
-      width: auto;
+      width: 100%;
     }
   
     .daterangepicker .ranges ul {

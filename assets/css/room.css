@@ -408,8 +408,10 @@
 
 .cs-bw-booking-rooms-panel__add-chambre button,
 .cs-bw-booking-chambre__remove-chamber button {
-  background: none;
-  border: none;
+  background: none !important;
+  border: none !important;
+  color: #000 !important;
+  outline: none !important;
 }
 
 .cs-bw-booking-rooms-panel__add-chambre img,
@@ -449,8 +451,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border-bottom: #d0ced4;
-  border-bottom-width: 1px;
+  border-color: #d0ced4;
+  border-width: 0 0 1px 0;
   border-style: solid;
   padding-bottom: 12px;
 }
@@ -517,12 +519,19 @@
 .cs-bw-booking-round-input__value input {
   width: 0.75rem;
   color: inherit;
-  background: none;
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0;
+  position: relative;
+  top: -3px;
 }
 
 .cs-bw-booking-round-input button {
-  border: none;
-  background: none;
+  background: none !important;
+  border: none !important;
+  color: #000 !important;
+  outline: none !important;
 }
 
 .cs-bw-booking-round-input button[disabled] {
@@ -804,6 +813,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  min-height: 54px;
   max-width: 120px;
   text-decoration: none;
   justify-content: center;

@@ -6,7 +6,7 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'reset', 'daterangepicker', 'room' ];
+		return [ 'daterangepicker', 'room' ];
 	}
 	
 	public function get_name() {
@@ -61,7 +61,7 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		?>
 
-		<form method="get" action="https://www.bestwestern.se/<?php echo $settings['hotel_code']; ?>?type=HOTEL" target="_blank">
+		<form method="get" action="https://www.bestwestern.se/hotel/<?php echo $settings['hotel_code']; ?>?type=HOTEL" target="_blank">
 			<div class="mainSiteContainer">
 				<div class="contentSection">
 					<div class="mb_contentitem_container mb_contentitem_container_bwbooking">
@@ -91,7 +91,7 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 													<div class="cs-bw-booking-rooms-panel__add-chambre">
 														<button type="button" id="booking-add-chambre">
 															<img src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . '../assets/images/plus.svg'; ?>" style="border-width:0">
-															<span>Add rooms</span>
+															<span id="addRooms">Add rooms</span>
 														</button>
 													</div>
 												</div>
@@ -99,17 +99,17 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 												<div class="cs-bw-booking-rooms-panel__footer">
 													<span id="booking-calculations"></span>
 													<button type="button" id="booking-close-rooms">
-														<span>Cancel</span>
+														<span id="bookingCancel">Cancel</span>
 													</button>
 												</div>  
 											</div>
 										</div>
 										
 										<div id="booking-codes" class="cs-bw-booking-codes">
-											<input type="text" id="promoCode" name="promoCode" class="bw-input" spellcheck="false" placeholder="Booking Code">
+											<input type="text" id="promoCode" name="promoCode" class="bw-input" spellcheck="false" placeholder="Search">
 										</div>
 
-										<input type="submit" class="bookingButton" value="Reserve">
+										<input type="submit" id="bookingButton" class="bookingButton" value="Reserve">
 									</div>
 								</div>
 							</div>

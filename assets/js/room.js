@@ -5,12 +5,18 @@ var adultsLimitValue = 6,
 	childsLimitValue = 5,
 	childsDefaultValue = 0
 
+languageCode = document.documentElement.lang;
 
-if(languageCode == "sv") {
+if(languageCode == "sv-SE") {
 	var bookingResources = { 
 		"calculationsResources": { "Adult": "vuxen", "Adults": "vuxna", "Child": "barn", "Childs": "barn", "Room": "rum", "Rooms": "rum" }, 
 		"chambreResources": { "Adults": "Vuxna", "ChildrenAge": "0-12 år", "Childrens": "Barn", "RemoveRoom": "Ta bort rum", "Room": "Rum" }
 	};
+
+	document.getElementById("addRooms").textContent= "Lägg till rum";
+	document.getElementById("bookingCancel").textContent= "Klar";
+	document.getElementById("promoCode").placeholder= "Bokningskod";
+	document.getElementById("bookingButton").value= "Sök";
 }
 else {
 	var bookingResources = { 
@@ -137,6 +143,7 @@ function OnAddRoomScroll() {
 }
 
 function AddChambre() {
+
 	var i = document.getElementById("chambers-container"),
 		t = document.getElementsByClassName("cs-bw-booking-chambre");
 	if (!(t.length >= 9)) {
@@ -147,19 +154,19 @@ function AddChambre() {
 			'<div class="cs-bw-booking-chambre__adults"><span>' + bookingResources.chambreResources.Adults + '<\/span>' + 
 			'<div class="cs-bw-booking-round-input">' + 
 			'<div class="cs-bw-booking-round-input__decrement">' + 
-			'<button type="button" id="' + n + '-decrement-adults-button" onclick="DecrementAdultsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking/assets/images/minus-circled.svg" /><\/button><\/div>' + 
+			'<button type="button" id="' + n + '-decrement-adults-button" onclick="DecrementAdultsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/minus-circled.svg" /><\/button><\/div>' + 
 			'<div class="cs-bw-booking-round-input__value"><input type="text" id="' + n + '-adults-input-value" name="numAdults[' + t.length + ']"><\/input><\/div>' + 
-			'<div class="cs-bw-booking-round-input__increment"><button type="button" id="' + n + '-increment-adults-button" onclick="IncrementAdultsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking/assets/images/plus-circled.svg" /><\/button><\/div><\/div><\/div>'+
+			'<div class="cs-bw-booking-round-input__increment"><button type="button" id="' + n + '-increment-adults-button" onclick="IncrementAdultsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/plus-circled.svg" /><\/button><\/div><\/div><\/div>'+
 			'<div class="cs-bw-booking-chambre__childs"><div class="cs-bw-booking-chambre-childs-age">' + 
 			'<span class="cs-bw-booking-chambre-childs-age__child">' + bookingResources.chambreResources.Childrens + '<\/span>' + 
 			'<span class="cs-bw-booking-chambre-childs-age__age">' + bookingResources.chambreResources.ChildrenAge + '<\/span><\/div>' + 
 			'<div class="cs-bw-booking-round-input"><div class="cs-bw-booking-round-input__decrement">' + 
-			'<button type="button" id="' + n + '-decrement-childs-button" onclick="DecrementChildsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking/assets/images/minus-circled.svg" /><\/button><\/div>' + 
+			'<button type="button" id="' + n + '-decrement-childs-button" onclick="DecrementChildsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/minus-circled.svg" /><\/button><\/div>' + 
 			'<div class="cs-bw-booking-round-input__value"><input type="text" id="' + n + '-childs-input-value" name="numChild[' + t.length + ']"><\/input><\/div>' + 
-			'<div class="cs-bw-booking-round-input__increment"><button type="button" id="' + n + '-increment-childs-button" onclick="IncrementChildsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking/assets/images/plus-circled.svg" /><\/button><\/div><\/div><\/div>' + 
-			'<div class="cs-bw-booking-chambre__remove-chamber"><button type="button" onclick="RemoveChambre(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking/assets/images/minus.svg" /><span>' + bookingResources.chambreResources.RemoveRoom + "<\/span><\/button><\/div><\/div>";
+			'<div class="cs-bw-booking-round-input__increment"><button type="button" id="' + n + '-increment-childs-button" onclick="IncrementChildsInputValue(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/plus-circled.svg" /><\/button><\/div><\/div><\/div>' + 
+			'<div class="cs-bw-booking-chambre__remove-chamber"><button type="button" onclick="RemoveChambre(\'' + n + '\')"><img src="../wp-content/plugins/bwse-booking-elementor/assets/images/minus.svg" /><span>' + bookingResources.chambreResources.RemoveRoom + "<\/span><\/button><\/div><\/div>";
 		i.insertAdjacentHTML("beforeend", u);
-		SetDefaultChambreValues(n);
+		SetDefaultChambreValues(n,t);
 		r == 1 && (i.getElementsByClassName("cs-bw-booking-chambre__remove-chamber")[0].style.display = "none")
 	}
 }

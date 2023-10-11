@@ -7,6 +7,12 @@ jQuery(document).ready(function($) {
 
     function cb(start, end) {
         jQuery("#booking-datepicker").html(start.format("D MMM") + " - " + end.format("D MMM"));
+        jQuery("#startDate").val(start.format('YYYY-MM-DD'));
+        jQuery("#endDate").val(end.format('YYYY-MM-DD'));
+
+        jQuery("#numberOfRooms").val('1');
+        jQuery("#chambre-1-adults-input-value").val('1');
+        jQuery("#chambre-1-childs-input-value").val('1');
     }
     
     jQuery("#booking-datepicker").daterangepicker({
@@ -21,7 +27,7 @@ jQuery(document).ready(function($) {
     });
 
     jQuery('#booking-datepicker').on('show.daterangepicker', function(ev, picker) {
-        jQuery("#startDate").val(picker.startDate.format('YYYY-MM-DD'));
+        jQuery("#startDate").val(start.format('YYYY-MM-DD'));
         jQuery("#endDate").val(picker.endDate.format('YYYY-MM-DD'));
     });
 
