@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
     // Date Range Selector
-    moment.locale(document.documentElement.lang.slice(0, -3));
+    var lang = moment.locale(document.documentElement.lang.slice(0, -3));
     var start = moment();
     var end = moment().add(1, "days");
 
