@@ -106,7 +106,7 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 										</div>
 										
 										<div id="booking-codes" class="cs-bw-booking-codes">
-											<input type="text" id="promoCode" name="promoCode" class="bw-input" spellcheck="false" placeholder="Search">
+											<input type="text" id="promoCode" name="promoCode" class="bw-input" spellcheck="false" placeholder="Promo">
 										</div>
 
 										<input type="submit" id="bookingButton" class="bookingButton" value="Reserve">

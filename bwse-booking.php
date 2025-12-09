@@ -22,8 +22,8 @@ function register_bwse_booking_widget( $widgets_manager ) {
 add_action( 'elementor/widgets/register', 'register_bwse_booking_widget' );
 
 function register_widget_scripts() {
-	wp_register_script( 'moment', '//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js', null, null, true );
-	wp_register_script( 'daterangepicker', '//cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', null, null, true );
+	wp_register_script( 'moment', '//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_register_script( 'daterangepicker', '//cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', array( 'jquery' ), '1.0.0', true );
 	wp_register_script( 'calender', plugins_url( 'assets/js/calender.js', __FILE__ ) );
 	wp_register_script( 'room', plugins_url( 'assets/js/room.js', __FILE__ ) );
 }
