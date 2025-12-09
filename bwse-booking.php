@@ -31,24 +31,153 @@ add_action( 'elementor/widgets/register', 'register_bwse_booking_widget' );
 
 /**
  * Register widget scripts
+ * Scripts are registered but not enqueued - the widget will enqueue them when needed
  */
-function register_widget_scripts() {
-	wp_register_script( 'moment', '//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js', array( 'jquery' ), '1.0.0', true );
-	wp_register_script( 'daterangepicker', '//cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', array( 'jquery', 'moment' ), '1.0.0', true );
-	wp_register_script( 'calender', plugins_url( 'assets/js/calender.js', __FILE__ ), array( 'jquery', 'daterangepicker' ), '2.0.0', true );
-	wp_register_script( 'room', plugins_url( 'assets/js/room.js', __FILE__ ), array( 'jquery' ), '2.0.0', true );
+function bwse_register_widget_scripts() {
+	// Register external dependencies
+	wp_register_script( 
+		'moment', 
+		'//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js', 
+		array( 'jquery' ), 
+		null, // Use null for external CDN version
+		true 
+	);
+	
+	wp_register_script( 
+		'daterangepicker', 
+		'//cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', 
+		array( 'jquery', 'moment' ), 
+		null, 
+		true 
+	);
+	
+	// Register custom scripts
+	wp_register_script( 
+		'bwse-calender', 
+		plugins_url( 'assets/js/calender.js', __FILE__ ), 
+		array( 'jquery', 'daterangepicker' ), 
+		'2.0.0', 
+		true 
+	);
+	
+	wp_register_script( 
+		'bwse-room', 
+		plugins_url( 'assets/js/room.js', __FILE__ ), 
+		array( 'jquery' ), 
+		'2.0.0', 
+		true 
+	);
 }
-add_action( 'wp_enqueue_scripts', 'register_widget_scripts' );
+add_action( 'wp_enqueue_scripts', 'bwse_register_widget_scripts' );
 
 /**
  * Register widget styles
+ * Styles are registered but not enqueued - the widget will enqueue them when needed
  */
-function register_widget_styles() {
-	wp_register_style( 'reset', plugins_url( 'assets/css/reset.css', __FILE__ ), array(), '2.0.0' );
-	wp_register_style( 'daterangepicker', plugins_url( 'assets/css/daterangepicker.css', __FILE__ ), array(), '2.0.0' );
-	wp_register_style( 'room', plugins_url( 'assets/css/room.css', __FILE__ ), array(), '2.0.0' );
+function bwse_register_widget_styles() {
+	wp_register_style( 
+		'bwse-reset', 
+		plugins_url( 'assets/css/reset.css', __FILE__ ), 
+		array(), 
+		'2.0.0' 
+	);
+	
+	wp_register_style( 
+		'bwse-daterangepicker', 
+		plugins_url( 'assets/css/daterangepicker.css', __FILE__ ), 
+		array(), 
+		'2.0.0' 
+	);
+	
+	wp_register_style( 
+		'bwse-room', 
+		plugins_url( 'assets/css/room.css', __FILE__ ), 
+		array(), 
+		'2.0.0' 
+	);
 }
-add_action( 'wp_enqueue_scripts', 'register_widget_styles' );
+add_action( 'wp_enqueue_scripts', 'bwse_register_widget_styles' );
+
+/**
+ * Enqueue scripts in Elementor editor
+ */
+function bwse_enqueue_editor_scripts() {
+	// Enqueue scripts needed for the Elementor editor preview
+	wp_enqueue_script( 'moment' );
+	wp_enqueue_script( 'daterangepicker' );
+	wp_enqueue_script( 'bwse-calender' );
+	wp_enqueue_script( 'bwse-room' );
+}
+add_action( 'elementor/editor/before_enqueue_scripts', 'bwse_enqueue_editor_scripts' );
+
+/**
+ * Enqueue styles in Elementor editor
+ */
+function bwse_enqueue_editor_styles() {
+	// Enqueue styles needed for the Elementor editor preview
+	wp_enqueue_style( 'bwse-reset' );
+	wp_enqueue_style( 'bwse-daterangepicker' );
+	wp_enqueue_style( 'bwse-room' );
+}
+add_action( 'elementor/editor/before_enqueue_styles', 'bwse_enqueue_editor_styles' );
+
+/**
+ * Enqueue frontend scripts when widget is used
+ */
+function bwse_enqueue_frontend_scripts() {
+	// Check if Elementor is in preview mode or if the widget is used on the page
+	if ( \Elementor\Plugin::$instance->preview->is_preview_mode() || bwse_is_widget_used() ) {
+		wp_enqueue_script( 'moment' );
+		wp_enqueue_script( 'daterangepicker' );
+		wp_enqueue_script( 'bwse-calender' );
+		wp_enqueue_script( 'bwse-room' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'bwse_enqueue_frontend_scripts', 20 );
+
+/**
+ * Enqueue frontend styles when widget is used
+ */
+function bwse_enqueue_frontend_styles() {
+	// Check if Elementor is in preview mode or if the widget is used on the page
+	if ( \Elementor\Plugin::$instance->preview->is_preview_mode() || bwse_is_widget_used() ) {
+		wp_enqueue_style( 'bwse-reset' );
+		wp_enqueue_style( 'bwse-daterangepicker' );
+		wp_enqueue_style( 'bwse-room' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'bwse_enqueue_frontend_styles', 20 );
+
+/**
+ * Check if the BWSE widget is used on the current page
+ */
+function bwse_is_widget_used() {
+	// If Elementor is not active, return false
+	if ( ! did_action( 'elementor/loaded' ) ) {
+		return false;
+	}
+	
+	// Get the current post ID
+	$post_id = get_the_ID();
+	
+	if ( ! $post_id ) {
+		return false;
+	}
+	
+	// Check if the post has Elementor data
+	$elementor_data = get_post_meta( $post_id, '_elementor_data', true );
+	
+	if ( empty( $elementor_data ) ) {
+		return false;
+	}
+	
+	// Check if our widget is used in the Elementor data
+	if ( is_string( $elementor_data ) ) {
+		return strpos( $elementor_data, 'bwse_booking' ) !== false;
+	}
+	
+	return false;
+}
 
 /**
  * Check if Elementor is installed and activated

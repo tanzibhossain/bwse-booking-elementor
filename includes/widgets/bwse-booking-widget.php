@@ -45,16 +45,18 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 
 	/**
 	 * Get script dependencies.
+	 * This method tells Elementor which scripts to load when this widget is used
 	 */
 	public function get_script_depends() {
-		return [ 'moment', 'daterangepicker', 'calender', 'room' ];
+		return [ 'moment', 'daterangepicker', 'bwse-calender', 'bwse-room' ];
 	}
 
 	/**
 	 * Get style dependencies.
+	 * This method tells Elementor which styles to load when this widget is used
 	 */
 	public function get_style_depends() {
-		return [ 'daterangepicker', 'room' ];
+		return [ 'bwse-reset', 'bwse-daterangepicker', 'bwse-room' ];
 	}
 
 	/**
@@ -85,6 +87,29 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 		// General Settings Tab End
 
+		// Style Settings Tab Start
+		$this->start_controls_section(
+			'style_section',
+			[
+				'label' => esc_html__( 'Form Styles', 'bwse-booking' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'button_color',
+			[
+				'label' => esc_html__( 'Button Color', 'bwse-booking' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .bookingButton' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// Style Settings Tab End
+
 	}
 
 	/**
@@ -94,6 +119,7 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		$hotel_code = ! empty( $settings['hotel_code'] ) ? esc_attr( $settings['hotel_code'] ) : '';
 		
+		// Show message in editor if hotel code is not set
 		if ( empty( $hotel_code ) ) {
 			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 				echo '<div style="padding: 20px; background: #f0f0f0; border: 1px dashed #ccc; text-align: center;">';
@@ -171,6 +197,7 @@ class BWSE_Booking extends \Elementor\Widget_Base {
 
 	/**
 	 * Render widget output in the editor.
+	 * This ensures proper preview in Elementor editor
 	 */
 	protected function content_template() {
 		?>
